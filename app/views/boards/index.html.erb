@@ -1,0 +1,21 @@
+<h1 class="ui header">Boards</h1>
+<%= link_to "New Board", new_user_board_path(current_user), class: "ui small green button" %>
+<div class="ui divider"></div>
+<table class="ui blue table">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @boards.each do |board| %>
+      <tr>
+        <td><h3><%= link_to board.name, board %></h3><%= board.description %></td>
+        <td><%= link_to 'Edit', edit_board_path(board), class: "ui blue button" %></td>
+        <td><%= link_to 'Delete', board, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui red button" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

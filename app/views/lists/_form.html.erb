@@ -1,0 +1,13 @@
+<div class="ui form">
+<%= form_for [@board, @list] do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "input" %>
+  </div>
+ <div class="field">
+   <%= f.label :description %>
+   <%= f.text_area :description, class: "input" %>
+ </div>
+ <%= f.submit nil, class: "ui green button" %>
+<% end %>
+</div>

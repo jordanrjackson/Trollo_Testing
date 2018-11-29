@@ -1,0 +1,21 @@
+<h1 class="ui header"><%= @task.name %></h1>
+<%= link_to 'Edit Task', edit_list_task_path(@task), class: "ui small blue button" %>
+<div class="ui divider"></div>
+
+<div class="ui three column grid">
+    <div class="column">
+      <div class="ui fluid card">
+        <div class="content">
+          <div class="header"><%= @task.name %></div>
+          <div class="center aligned description">Priority: <%= @task.priority %></div>
+          <div class="description"><%= @task.description %></div>
+        </div>
+        <div class="extra content">
+          <div class="ui two buttons">
+              <%= link_to 'Edit', edit_list_task_path(@task), class: "ui blue button" %>
+              <%= link_to 'Delete', list_task_path(@task), method: :delete, data: { confirm: 'Are you sure?' }, class: "ui red button" %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

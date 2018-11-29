@@ -1,0 +1,46 @@
+<div class="ui form">
+<%= form_for [@list, @task] do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "input" %>
+  </div>
+ <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "input" %>
+ </div>
+  <div class="inline fields">
+    <label for="priority">Select Task Priority: </label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= f.radio_button(:priority, "1") %>
+        <%= f.label(:priority_1, " Highest Priority") %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= f.radio_button(:priority, "2") %>
+        <%= f.label(:priority_2, " High Priority") %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= f.radio_button(:priority, "3") %>
+        <%= f.label(:priority_3, " Medium Priority") %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= f.radio_button(:priority, "4") %>
+        <%= f.label(:priority_4, " Low Priority") %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= f.radio_button(:priority, "5") %>
+        <%= f.label(:priority_5, " Lowest Priority") %>
+      </div>
+    </div>
+ </div>
+ <%= f.submit nil, class: "ui green button" %>
+<% end %>
+</div>
